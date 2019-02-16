@@ -5,3 +5,5 @@ backup.sh {название создаваемого каталога} {назв
 Пример:
 
 backup.sh catalog archive .cpp .py .js
+
+Скрипт в соседней ветке
