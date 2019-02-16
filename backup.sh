@@ -1,21 +1,22 @@
 #!/bin/bash
 
+cd
 DIRNAME=$1
 ARCHIVENAME=$2
 shift
 shift
 
-if [ -d $HOME/$DIRNAME ]
+if [ -d $DIRNAME ]
   then
-  rm -r $HOME/$DIRNAME
+  rm -r $DIRNAME
   fi
-mkdir $HOME/$DIRNAME
+mkdir $DIRNAME
 for i
   do
-  for file in $(find $HOME -name "*$i")
+  for file in $(find . -name "*$i")
     do
-    cp —parents $file $HOME/$DIRNAME
+    cp —parents $file $DIRNAME
     done
   done
-tar —absolute-names —create —file $HOME/$ARCHIVENAME.tar $HOME/$DIRNAME
+tar —create —file $ARCHIVENAME.tar $DIRNAME
 echo "done"
